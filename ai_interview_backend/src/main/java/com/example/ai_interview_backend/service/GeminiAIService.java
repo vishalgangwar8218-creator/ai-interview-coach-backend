@@ -113,7 +113,7 @@ public class GeminiAIService {
         summaryResponse.setRole(role);
 
         try {
-            ResponseEntity<Map> response = restTemplate.postForEntity(apiUrl, entity, Map.class);
+            ResponseEntity<Map> response = restTemplate.postForEntity(getApiUrl(), entity, Map.class);
             Map body = response.getBody();
             List candidates = (List) body.get("candidates");
 
